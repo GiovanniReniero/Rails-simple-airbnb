@@ -1,16 +1,41 @@
-<h6>This is the flats index page</h6>
+<h3>All Our Flats</h3>
 <br>
-<ol>
+
+<div class="container">
   <% @flats.each do |flat|  %>
-  <li>
-   <h2> <a><%= link_to "#{flat.address}", flat_path(flat.id) %></a></h2> 
-    <h4> <%= "#{flat.name}" %> </h4>
-    <h4> <%= "Price per night £:#{flat.price_per_night}" %> </h4>
+
+    <div class="card" style="width: 18rem;">
+      <%# <img src="..." class="card-img-top" alt="..."> %>
+      <div class="card-body">
+        <h5 class="card-title"><a><%= link_to "#{flat.address}", flat_path(flat.id) %></a></h5>
+        <p class="card-text"> <%= "#{flat.description}" %> </p>
+      </div>
+      <ul class="list-group list-group-flush">
+      <div class = "d-flex p-2 justify-content-evenly">
+        <div class="d-inline-flex p-2 align-items-center">
+          <i class="material-icons">people</i>
+          <li class="list-group-item"><%= "#{flat.number_of_guests}" %></li>
+        </div>
+  
+  
+        <div class="d-inline-flex p-2 align-items-center">
+          <i  class="material-icons ">euro_symbol</i>
+          <li class="list-group-item"><%= "#{flat.price_per_night}" %></li>
+        </div>  
+          
+        <li class="list-group-item">Rating</li>
+      </div>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link"><%= link_to "Find Out more", flat_path(flat.id) %></a> | 
+      </div>
+    </div>
     <br>
-  </li>
-  <% end %>
-</ol>
-<br>
+    <% end %>
+</div>
+
+
+
 
 <a>  <%= link_to "New Flat", new_flat_path %>  </a>
 
