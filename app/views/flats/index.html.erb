@@ -1,11 +1,12 @@
 <h6>This is the flats index page</h6>
-
+<br>
 <ol>
   <% @flats.each do |flat|  %>
   <li>
-   <h1> <a><%= link_to "#{flat.address}", flat_path(flat.id) %></a></h1> 
-    <h3> <%= "#{flat.name}" %> </h3>
-    <h3> <%= "Price per night £:#{flat.price_per_night}" %> </h3>
+   <h2> <a><%= link_to "#{flat.address}", flat_path(flat.id) %></a></h2> 
+    <h4> <%= "#{flat.name}" %> </h4>
+    <h4> <%= "Price per night £:#{flat.price_per_night}" %> </h4>
+    <br>
   </li>
   <% end %>
 </ol>
