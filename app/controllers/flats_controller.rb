@@ -22,7 +22,6 @@ class FlatsController < ApplicationController
   end
   
   def update
-    @flat = Flat.new
     @flat.update(flats_params)
     redirect_to flats_path
   end
@@ -30,7 +29,7 @@ class FlatsController < ApplicationController
   private
 
   def flats_params
-    params.require(:flat).permit(:name, :adrress, :description,   :price_per_night, :number_of_guests)
+    params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
   end
 
   def find_flat
