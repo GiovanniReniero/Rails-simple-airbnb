@@ -1,0 +1,13 @@
+<h6>This is the Flat Show page</h6>
+<br>
+
+<h2> <%= "#{@flat.address}" %>  </h2>
+<h4> <%= "Price per night £:#{@flat.price_per_night}" %>  </h4>
+<h4> <%= "Maximum number of guests: #{@flat.number_of_guests}" %>  </h4>
+<h5> <%= "=> Details:"  %>  </h5>
+<h5> <%=  "#{@flat.description}" %>  </h5>
+<h5> <%= "Contact: #{@flat.name}" %>  </h5>
+
+<br>
+<a> <%= link_to "Back to Flats", flats_path %>  </a> |
+<a> <%= link_to "Edit", edit_flat_path(@flat) %>  </a> 
