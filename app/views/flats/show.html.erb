@@ -4,10 +4,21 @@
 <h2> <%= "#{@flat.address}" %>  </h2>
 <h4> <%= "Price per night £:#{@flat.price_per_night}" %>  </h4>
 <h4> <%= "Maximum number of guests: #{@flat.number_of_guests}" %>  </h4>
-<h5> <%= "=> Details:"  %>  </h5>
+<h5> <%= "Details:"  %>  </h5>
 <h5> <%=  "#{@flat.description}" %>  </h5>
 <h5> <%= "Contact: #{@flat.name}" %>  </h5>
+<h5> <%= "REVIEWS:"  %>  </h5>
+  <ol>
+    <% @flat.reviews.each do |review| %>  
+    <li>  
+      <h5> <%= " #{review.review}" %>  </h5>
+      <h5> <%= " Rating: #{review.rating}" %>  </h5> 
+    </li>
+    <% end %>
+  </ol>
+  
 
 <br>
 <a> <%= link_to "Back to Flats", flats_path %>  </a> |
-<a> <%= link_to "Edit", edit_flat_path(@flat) %>  </a> 
+<a> <%= link_to "Edit", edit_flat_path(@flat) %>  </a> | 
+<a> <%= link_to "Add a Review", new_flat_review_path(@flat) %>  </a> 

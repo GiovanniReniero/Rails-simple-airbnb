@@ -1,0 +1,14 @@
+
+<h2> <%= "#{@flat.address}" %>  </h2>
+<h4> <%= "Price per night £:#{@flat.price_per_night}" %>  </h4>
+<h4> <%= "Maximum number of guests: #{@flat.number_of_guests}" %>  </h4>
+<h5> <%= "Details:"  %>  </h5>
+<h5> <%=  "#{@flat.description}" %>  </h5>
+<h5> <%= "Contact: #{@flat.name}" %>  </h5>
+<br>
+<h5> <%= "Add your Review and rating below" %>  </h5>
+<br>
+
+<%= render "review" %>
+
+<a> <%= link_to "Cancel", flat_path(@flat) %> </a>
